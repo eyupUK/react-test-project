@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test": "vitest run --no-file-parallelism",
     "test:ui": "vitest run --ui --no-file-parallelism",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "lint": "eslint .",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@testing-library/jest-dom": "^6.6.3",

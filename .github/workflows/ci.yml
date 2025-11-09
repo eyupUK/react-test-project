@@ -23,12 +23,13 @@ jobs:
         run: npm ci
       
       - name: Run ESLint
-        run: npm run lint
+        run: npm run lint --if-present
       
       - name: Run TypeScript type checking
-        run: npm run type-check
+        run: npm run type-check --if-present
   build-and-test:
     name: Build & Test
+    needs: lint-and-type-check
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
