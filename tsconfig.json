@@ -12,7 +12,9 @@
     "noEmit": true,
     "esModuleInterop": true,
     "strict": true,
-    "baseUrl": "src"
+    "paths": {
+      "@/*": ["./src/*"]
+    }
   },
   "include": ["src"]
 }

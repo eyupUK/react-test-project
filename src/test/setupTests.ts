@@ -4,7 +4,8 @@ import 'whatwg-fetch';
 import { setupServer } from 'msw/node';
 import { handlers } from './testServerHandlers';
 
-const server = setupServer(...handlers);
+const server = setupServer();
+server.use(...handlers);
 
 beforeAll(() => server.listen({ onUnhandledRequest: 'error' }));
 afterEach(() => server.resetHandlers());

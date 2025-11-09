@@ -17,7 +17,8 @@ test('loads todos, adds a new one, and updates the list (integration flow)', asy
   await userEvent.type(input, 'Learn RTL');
   await userEvent.click(addButton);
 
-  expect(screen.getByRole('button', { name: /adding…/i })).toBeDisabled();
+  // Wait for the loading state
+  await expect(screen.findByRole('button', { name: /adding…/i })).resolves.toBeDisabled();
 
   const newItem = await screen.findByText('Learn RTL');
   expect(newItem).toBeInTheDocument();
