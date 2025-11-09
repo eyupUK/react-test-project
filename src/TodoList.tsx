@@ -1,4 +1,3 @@
-import React from 'react';
 import { useTodos } from './TodoContext';
 
 export default function TodoList() {
