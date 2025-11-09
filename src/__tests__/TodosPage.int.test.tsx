@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, screen, within } from '@testing-library/react';
+import { render, screen, waitFor, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import TodosPage from '../TodosPage';
 import 'whatwg-fetch';
@@ -23,5 +23,5 @@ test('loads todos, adds a new one, and updates the list (integration flow)', asy
   const newItem = await screen.findByText('Learn RTL');
   expect(newItem).toBeInTheDocument();
 
-  expect(input).toHaveValue('');
+  await waitFor(() => expect(input).toHaveValue(''));
 });
